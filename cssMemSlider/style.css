@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+}
+input {
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+}
+.slider {
+    max-width: 64%;
+    height: 96vh;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.monitor {
+    width: 800px;
+    height: 570px;
+    border-radius: 10px;
+}
+@keyframes change-slide1 {
+    from { transform: translateY(-100%); }
+    to {transform: translateY(0%);}
+}
+@keyframes change-slide2 {
+    from { transform: translateX(100%); }
+    to {transform: translateX(0%);}
+}
+@keyframes change-slide3 {
+    from { transform: translateY(100%); }
+    to {transform: translateY(0%);}
+}
+@keyframes change-slide4 {
+    from { transform: translateX(-100%); }
+    to {transform: translateX(0%);}
+}
+@keyframes change-text1 {
+    from { opacity: 0;}
+    to { opacity: 1;}
+}
+@keyframes change-text2 {
+    from { opacity: 0;}
+    to { opacity: 1;}
+}
+@keyframes change-text3 {
+    from { opacity: 0;}
+    to { opacity: 1;}
+}
+@keyframes change-text4 {
+    from { opacity: 0;}
+    to { opacity: 1;}
+}
+.controls {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.buttons, .text {
+    display: flex;
+}
+.text {
+    flex-direction: column;
+    line-height: 3rem;
+}
+label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;
+    width: 26px;
+    height: 26px;
+    border: solid 10px #fff;
+    border-radius: 23px;
+    background-color: brown;
+    cursor: pointer;
+    transition: 0.5s;
+}
+label:hover {
+    background-color: green;
+}
+.in1:checked ~ .slider .monitor {
+    background-image: url(image/Slide1.jpg);
+    animation: change-slide1 1s;
+}
+.in2:checked ~ .slider .monitor {
+    background-image: url(image/Slide2.jpg);
+    animation: change-slide2 1s;
+}
+.in3:checked ~ .slider .monitor {
+    background-image: url(image/Slide3.jpg);
+    animation: change-slide3 1s;
+}
+.in4:checked ~ .slider .monitor {
+    background-image: url(image/Slide4.jpg);
+    animation: change-slide4 1s;
+}
+.in1:checked ~ .slider .tx1 {
+    order: -1;
+    animation: change-text1 2s;
+}
+.in2:checked ~ .slider .tx2 {
+    order: -1;
+    animation: change-text2 2s;
+}
+.in3:checked ~ .slider .tx3 {
+    order: -1;
+    animation: change-text3 2s;
+}
+.in4:checked ~ .slider .tx4 {
+    order: -1;
+    animation: change-text4 2s;
+}
+.in1:checked ~ .slider span:not(.tx1) {
+    visibility: hidden;
+}
+.in2:checked ~ .slider span:not(.tx2) {
+    visibility: hidden;
+}
+.in3:checked ~ .slider span:not(.tx3) {
+    visibility: hidden;
+}
+.in4:checked ~ .slider span:not(.tx4) {
+    visibility: hidden;
+}
+.in1:checked ~ .slider .lb1 > div {
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: beige;
+}
+.in2:checked ~ .slider .lb2 > div {
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: beige;
+}
+.in3:checked ~ .slider .lb3 > div {
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: beige;
+}
+.in4:checked ~ .slider .lb4 > div {
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: beige;
+}
