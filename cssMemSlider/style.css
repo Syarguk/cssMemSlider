@@ -3,38 +3,37 @@
 }
 input {
     visibility: hidden;
-    width: 1px;
-    height: 1px;
+    width: 0rem;
+    height: 0rem;
     margin: 0;
 }
 .slider {
-    max-width: 64%;
-    height: 96vh;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.5rem;
+    width: 60%;
     margin: 0 auto;
-    overflow: hidden;
 }
 .monitor {
-    width: 800px;
-    height: 570px;
-    border-radius: 10px;
+    width: 59.0vw;
+    height: calc(59.0 / 14 * 10vw);
+    border-radius: 0.7rem;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 @keyframes change-slide1 {
-    from { transform: translateY(-100%); }
-    to {transform: translateY(0%);}
+    from { background-position-y: -40rem; }
+    to {background-position-y: 0;}
 }
 @keyframes change-slide2 {
-    from { transform: translateX(100%); }
-    to {transform: translateX(0%);}
+    from { background-position-x: 50rem; }
+    to {background-position-x: 0;}
 }
 @keyframes change-slide3 {
-    from { transform: translateY(100%); }
-    to {transform: translateY(0%);}
+    from { background-position-y: 40rem; }
+    to {background-position-y: 0;}
 }
 @keyframes change-slide4 {
-    from { transform: translateX(-100%); }
-    to {transform: translateX(0%);}
+    from { background-position-x: -50rem; }
+    to {background-position-x: 0;}
 }
 @keyframes change-text1 {
     from { opacity: 0;}
@@ -56,13 +55,15 @@ input {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 1rem;
 }
 .buttons, .text {
     display: flex;
 }
 .text {
     flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
     line-height: 3rem;
 }
 label {
@@ -70,16 +71,19 @@ label {
     justify-content: center;
     align-items: center;
     box-sizing: content-box;
-    width: 26px;
-    height: 26px;
-    border: solid 10px #fff;
-    border-radius: 23px;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: solid 0.6rem #fff;
+    border-radius: 3rem;
     background-color: brown;
     cursor: pointer;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 label:hover {
     background-color: green;
+}
+label:active {
+    border-color: cadetblue;
 }
 .in1:checked ~ .slider .monitor {
     background-image: url(image/Slide1.jpg);
@@ -99,53 +103,127 @@ label:hover {
 }
 .in1:checked ~ .slider .tx1 {
     order: -1;
-    animation: change-text1 2s;
+    animation: change-text1 2.5s;
 }
 .in2:checked ~ .slider .tx2 {
     order: -1;
-    animation: change-text2 2s;
+    animation: change-text2 2.5s;
 }
 .in3:checked ~ .slider .tx3 {
     order: -1;
-    animation: change-text3 2s;
+    animation: change-text3 2.5s;
 }
 .in4:checked ~ .slider .tx4 {
     order: -1;
-    animation: change-text4 2s;
+    animation: change-text4 2.5s;
 }
 .in1:checked ~ .slider span:not(.tx1) {
     visibility: hidden;
+    font-size: 0rem;
+    line-height: 0rem;
 }
 .in2:checked ~ .slider span:not(.tx2) {
     visibility: hidden;
+    font-size: 0rem;
+    line-height: 0rem;
 }
 .in3:checked ~ .slider span:not(.tx3) {
     visibility: hidden;
+    font-size: 0rem;
+    line-height: 0rem;
 }
 .in4:checked ~ .slider span:not(.tx4) {
     visibility: hidden;
+    font-size: 0rem;
+    line-height: 0rem;
 }
 .in1:checked ~ .slider .lb1 > div {
-    width: 14px;
-    height: 14px;
-    border-radius: 7px;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 0.35rem;
     background-color: beige;
 }
 .in2:checked ~ .slider .lb2 > div {
-    width: 14px;
-    height: 14px;
-    border-radius: 7px;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 0.35rem;
     background-color: beige;
 }
 .in3:checked ~ .slider .lb3 > div {
-    width: 14px;
-    height: 14px;
-    border-radius: 7px;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 0.35rem;
     background-color: beige;
 }
 .in4:checked ~ .slider .lb4 > div {
-    width: 14px;
-    height: 14px;
-    border-radius: 7px;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 0.35rem;
     background-color: beige;
+}
+@media (max-width: 1024px) {
+    .text {
+        font-size: 1.1rem;
+        line-height: 2rem;
+    }
+    label {
+        width: 1.3rem;
+        height: 1.3rem;
+        border-width: 0.5rem;
+    }
+    label > div {
+        width: 0.6rem;
+        height: 0.6rem;
+    }
+}
+@media(max-width: 768px) {
+    .controls {
+        flex-direction: column;
+        margin-top: 1.5rem;
+    }
+    .slider {
+        width: 80vw;
+    }
+    .monitor {
+        width: 80vw;
+        height: calc(80 / 14 * 10vw);
+    }
+    .text {
+        font-size: 1.3rem;
+        line-height: 2.5rem;
+        margin-top: 1.5rem;
+    }
+    .buttons {
+        align-self: center;
+    }
+}
+@media(max-width: 425px) {
+    .text {
+        font-size: 1.1rem;
+        line-height: 2rem;
+    }
+    label {
+        width: 1.1rem;
+        height: 1.1rem;
+        border-width: 0.4rem;
+    }
+    label > div {
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+}
+@media(max-width: 425px) {
+    .text {
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+    }
+    label {
+        width: 1rem;
+        height: 1rem;
+        border-width: 0.4rem;
+    }
+    label > div {
+        width: 0.4rem;
+        height: 0.4rem;
+    }
 }
