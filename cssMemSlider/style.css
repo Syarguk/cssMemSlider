@@ -1,14 +1,21 @@
 * {
     box-sizing: border-box;
 }
+main {
+    width: 90%;
+    background-color: #deb887;
+    padding: 2rem 0;
+    margin: 0 auto;
+}
 input {
     visibility: hidden;
     width: 0rem;
     height: 0rem;
     margin: 0;
+    display: none;
 }
 .slider {
-    width: 60%;
+    width: 59vw;
     margin: 0 auto;
 }
 .monitor {
@@ -73,7 +80,7 @@ label {
     box-sizing: content-box;
     width: 1.5rem;
     height: 1.5rem;
-    border: solid 0.6rem #fff;
+    border: solid 0.6rem #deb887;
     border-radius: 3rem;
     background-color: brown;
     cursor: pointer;
